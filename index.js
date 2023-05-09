@@ -8,10 +8,11 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
+const cors = reuire("cors");
 
 dotenv.config();
 app.use(express.json());
-
+add.use(cors());
 mongoose.set('strictQuery', false)
 mongoose
   .connect(process.env.MONGO_URL, {
